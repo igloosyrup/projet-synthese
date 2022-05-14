@@ -1,0 +1,10 @@
+#home-bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../img/nt_virus_bg.png");
+    height: 100vh;
+}
+
+#title-bg{
+    background-color: rgba(1,1,1,0.6)
+}
