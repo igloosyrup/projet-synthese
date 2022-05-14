@@ -2,16 +2,14 @@ package com.igloosryup.syrupsecurity.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class CartProduct {
 
     @Id
+    @GeneratedValue
     private Integer id;
     @OneToOne
     private Product product;

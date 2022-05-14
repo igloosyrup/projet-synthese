@@ -2,16 +2,14 @@ package com.igloosryup.syrupsecurity.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class Product {
 
     @Id
+    @GeneratedValue
     private Integer id;
     @Column(nullable = false)
     private String name;
@@ -22,6 +20,5 @@ public class Product {
     @Column(nullable = false)
     private int quantity;
     @Lob
-    @Column(nullable = false)
     private byte[] images;
 }

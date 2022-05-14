@@ -13,11 +13,12 @@ public class Customer extends User{
     private String firstname;
     @Column(nullable = false)
     private String lastname;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 50)
     private String email;
-    @Column(unique = true, nullable = false)
-    private String phoneNumber;
+    @Column(unique = true, nullable = false, length = 20)
+    private String phoneNbr;
     @Column(nullable = false)
+    private String strAddr;
     private String aptNumber;
     @Column(nullable = false)
     private String postalCode;
@@ -25,5 +26,6 @@ public class Customer extends User{
     private String country;
     @Column(nullable = false)
     private String city;
+
 
 }

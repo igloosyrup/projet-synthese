@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://localhost:5520")
+@CrossOrigin(origins = "http://localhost:5520")
 @RequestMapping("/customer")
 public class CustomerController {
 
@@ -19,6 +20,10 @@ public class CustomerController {
 
     @PostMapping("/register")
     public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer){
+        System.out.println(customer);
+        System.out.println(customer.getPwd() + " " + customer.getId());
+        System.out.println(customer.getAptNumber() == null);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(new Customer());
         return customerService.registerCustomer(customer)
                 .map(customer1 -> ResponseEntity.status(HttpStatus.CREATED).body(customer1))
                 .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
@@ -38,5 +43,17 @@ public class CustomerController {
                 .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
     }
 
-//    @GetMapping("")
+    @DeleteMapping("/delete/{customerID}")
+    public ResponseEntity<Boolean> deleteCustomer(@PathVariable Integer customerID){
+        return customerService.deleteCustomer(customerID)
+                .map(customer1 -> ResponseEntity.status(HttpStatus.OK).body(customer1))
+                .orElse(ResponseEntity.status(HttpStatus.CONFLICT).body(false));
+    }
+
+    @GetMapping("/{customerID}")
+    public ResponseEntity<Customer> getCustomer(@PathVariable Integer customerID){
+        return customerService.getCustomer(customerID)
+                .map(customer -> ResponseEntity.status(HttpStatus.OK).body(customer))
+                .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
+    }
 }

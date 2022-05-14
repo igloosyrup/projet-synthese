@@ -80,12 +80,14 @@ const Navbar = () => {
                 </ul>
                 {/* TODO  login/registration landing page*/}
                 <span className="navbar-text">
-                    <button className="nav-link btn btn-link text-primary" onClick={() => toSignIn()}>
+                    <Link className="nav-link btn btn-link text-primary" to="#" onClick={() => toSignIn()}>
                         Se connecter/S'inscrire
-                    </button>
+                    </Link>
                 </span>
             </div>
         </nav>
+
+        
     )
 }
 

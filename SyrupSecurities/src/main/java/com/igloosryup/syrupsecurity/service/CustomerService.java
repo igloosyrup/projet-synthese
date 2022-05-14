@@ -2,6 +2,7 @@ package com.igloosryup.syrupsecurity.service;
 
 import com.igloosryup.syrupsecurity.model.Customer;
 import com.igloosryup.syrupsecurity.repository.CustomerRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class CustomerService {
     public Optional<Customer> registerCustomer(Customer customer) {
         try {
             //TODO validate customer infos
+            System.out.println(customer);
             return Optional.of(customerRepository.save(customer));
         } catch (Exception exception) {
             return Optional.empty();
@@ -34,6 +36,15 @@ public class CustomerService {
         }
     }
 
+    public Optional<Customer> getCustomer(Integer customerID) {
+        try {
+            return customerRepository.findById(customerID);
+
+        } catch (Exception exception) {
+            return Optional.empty();
+        }
+    }
+
     public Optional<List<Customer>> getAllCustomers() {
         try {
             return Optional.of(customerRepository.findAll());
@@ -42,4 +53,12 @@ public class CustomerService {
         }
     }
 
+    public Optional<Boolean> deleteCustomer(Integer customerID) {
+        try {
+            customerRepository.deleteById(customerID);
+            return Optional.of(customerRepository.findById(customerID).isEmpty());
+        } catch (Exception exception) {
+            return Optional.empty();
+        }
+    }
 }

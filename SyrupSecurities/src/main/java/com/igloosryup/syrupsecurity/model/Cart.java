@@ -10,6 +10,7 @@ import java.util.Map;
 public class Cart {
 
     @Id
+    @GeneratedValue
     private Integer id;
     @OneToMany
     private Map<Integer, CartProduct> cartProductMap;

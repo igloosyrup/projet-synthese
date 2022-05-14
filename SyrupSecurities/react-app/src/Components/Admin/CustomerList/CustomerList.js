@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../Navbar/Navbar'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Link } from 'react-router-dom'
 
