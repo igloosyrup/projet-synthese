@@ -13,6 +13,7 @@ body {
 }
 
 #notfound {
+    background-color: #00aec7;
     position: relative;
     height: 100vh;
 }

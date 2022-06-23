@@ -10,12 +10,9 @@ import {
 } from "react-router-dom";
 
 const Navbar = () => {
-    const [customer, setCustomer] = useState({
-        matricule: ""
-    })
+    const [customer, setCustomer] = useState({})
+    const [display, setDisplay] = useState({ toDisplay: "sasd"})
     const history = useHistory()
-    // const historyState = history.location.state
-    // const customerState = historyState.student
     const location = useLocation()
 
     const toHome = () => {
@@ -31,25 +28,30 @@ const Navbar = () => {
     }
 
     const toProducts = () => {
-        history.push("/products")
+        console.log(customer)
+        history.push("/product-list", customer.id)
     }
 
-    const toTeam = () => {
-        history.push("/team")
+    const toAboutUs = () => {
+        history.push("/about-us")
     }
 
     const toContactUs = () => {
-        history.push("/contact")
+        history.push("/contact-us")
     }
 
     const toSignIn = () => {
         history.push("/signin")
     }
 
+    const toProfile = () =>{
+        history.push("/customer/"+customer.id)
+    }
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
             <button className="navbar-brand btn btn-link">
-                <h4 className="text-dark align-middle">
+                <h4 className="text-light align-middle">
                     Syrup Securities
                 </h4>
             </button>
@@ -59,35 +61,31 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item ">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toHome()}>Accueil </button>
-                        {/* <span class="sr-only">(current)</span> */}
+                        <button className="nav-link btn btn-link text-light" onClick={() => toHome()}>Accueil </button>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toAntivirus()}>Antivirus</button>
+                        <button className="nav-link btn btn-link text-light" onClick={() => toAntivirus()}>Antivirus</button>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toVpn()}>V.P.N</button>
+                        <button className="nav-link btn btn-link text-light" onClick={() => toVpn()}>V.P.N</button>
                     </li>
                     <li className="nav-item ">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toProducts()}>Tous les Produits</button>
+                        <button className="nav-link btn btn-link text-light" onClick={() => toProducts()}>Tous les Produits</button>
                     </li>
                     <li className="nav-item ">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toTeam()}>L'équipe</button>
+                        <button className="nav-link btn btn-link text-light" onClick={() => toAboutUs()}>L'équipe</button>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-link btn btn-link text-primary" onClick={() => toContactUs()}>Nous joindre</button>
+                        <button className="nav-link btn btn-link text-light" onClick={() => toContactUs()}>Nous joindre</button>
                     </li>
                 </ul>
-                {/* TODO  login/registration landing page*/}
                 <span className="navbar-text">
-                    <Link className="nav-link btn btn-link text-primary" to="#" onClick={() => toSignIn()}>
+                    <Link className="nav-link btn btn-link text-light" to="#" onClick={() => toSignIn()}>
                         Se connecter/S'inscrire
                     </Link>
                 </span>
             </div>
         </nav>
-
-        
     )
 }
 
