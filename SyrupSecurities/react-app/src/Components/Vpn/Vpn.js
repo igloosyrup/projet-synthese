@@ -22,23 +22,23 @@ const Vpn = () => {
                 </div>
                 <hr />
                 <div className="container col-sm-10 col-md-9">
-                    <div className="container font-weight-italic my-5">
-                        <h2 className="font-weight-normal text-center">
-                            Comment fonctionne un VPN?
-                        </h2>
-                        <div className="container font-italic my-5">
-                            Le tunnel VPN est créé en authentifiant d'abord votre client (un ordinateur, un smartphone ou une tablette) auprès d'un serveur VPN. Le serveur utilise ensuite l'un des nombreux protocoles de chiffrement pour s'assurer que personne ne puisse surveiller les informations qui circulent
-                            entre vous et votre destination en ligne.
+                    <h2 className="font-weight-normal text-center mt-5">
+                        Comment fonctionne un VPN?
+                    </h2>
+                    <div className="container font-italic my-5">
+                        <div className="container my-5">
+                            "Le tunnel VPN est créé en authentifiant d'abord votre client (un ordinateur, un smartphone ou une tablette) auprès d'un serveur VPN. Le serveur utilise ensuite l'un des nombreux protocoles de chiffrement pour s'assurer que personne ne puisse surveiller les informations qui circulent
+                            entre vous et votre destination en ligne."
                         </div>
-                        <div className="container font-italic my-5">
-                            N'oubliez pas qu'avant d'être envoyées et reçues sur Internet, les données doivent d'abord être divisées en paquets.
-                            Pour garantir que chaque paquet de données reste sécurisé, un service VPN l'enveloppe dans un paquet extérieur, qui est ensuite chiffré par un processus appelé encapsulation.
+                        <div className="container my-5">
+                            "N'oubliez pas qu'avant d'être envoyées et reçues sur Internet, les données doivent d'abord être divisées en paquets.
+                            Pour garantir que chaque paquet de données reste sécurisé, un service VPN l'enveloppe dans un paquet extérieur, qui est ensuite chiffré par un processus appelé encapsulation."
                         </div>
-                        <div className="container font-italic mt-5">
-                            Ce paquet extérieur maintient la sécurité des données pendant le transfert, et il constitue l'élément central du tunnel VPN. Lorsque les données arrivent sur le serveur VPN,
-                            le paquet extérieur est retiré pour accéder aux données qu'il contient, ce qui nécessite un processus de déchiffrement.
+                        <div className="container mt-5">
+                            "Ce paquet extérieur maintient la sécurité des données pendant le transfert, et il constitue l'élément central du tunnel VPN. Lorsque les données arrivent sur le serveur VPN,
+                            le paquet extérieur est retiré pour accéder aux données qu'il contient, ce qui nécessite un processus de déchiffrement."
                         </div>
-                        <div className="float-right font-italic my-2">-NordVPN</div>
+                        <div className="float-right my-2">-NordVPN</div>
                     </div>
                     <div className="container my-5 font-italic">
                         Pour plus d'informations consulter: <a href="https://nordvpn.com/fr/what-is-a-vpn/" target="_blank">NordVPN</a>
