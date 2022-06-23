@@ -19,6 +19,6 @@ public class Product {
     private float price;
     @Column(nullable = false)
     private int quantity;
-    @Lob
-    private byte[] images;
+    @Column(nullable = false)
+    private String imageUrl;
 }
