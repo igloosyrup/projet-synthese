@@ -17,7 +17,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public Optional<Customer> registerCustomer(Customer customer) {
+    public Optional<Customer> saveCustomer(Customer customer) {
         try {
             //TODO validate customer infos
             System.out.println(customer);
