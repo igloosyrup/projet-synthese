@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5520")
@@ -20,12 +19,15 @@ public class CustomerController {
 
     @PostMapping("/register")
     public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer){
-        System.out.println(customer);
-        System.out.println(customer.getPwd() + " " + customer.getId());
-        System.out.println(customer.getAptNumber() == null);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(new Customer());
-        return customerService.registerCustomer(customer)
+        return customerService.saveCustomer(customer)
                 .map(customer1 -> ResponseEntity.status(HttpStatus.CREATED).body(customer1))
+                .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer){
+        return customerService.saveCustomer(customer)
+                .map(customer1 -> ResponseEntity.status(HttpStatus.OK).body(customer1))
                 .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
     }
 

@@ -28,7 +28,7 @@ public class ProductController {
     public ResponseEntity<Product> updateProduct(@RequestBody Product product){
         System.out.println(product);
         return productService.saveProduct(product)
-                .map(product1 -> ResponseEntity.status(HttpStatus.CREATED).body(product1))
+                .map(product1 -> ResponseEntity.status(HttpStatus.OK).body(product1))
                 .orElse(ResponseEntity.status(HttpStatus.CONFLICT).build());
     }
 
