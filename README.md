@@ -10,8 +10,3 @@ Comment setup le projet:
 	- Copier la deuxième requête qui se trouve dans le fichier setup.sql du dossier Setup 
 	- Executer la requête copiée de l'étape précédente
 	- Lancer l'application React avec la commande: npm start
-
-
-Tester les fonctionnalités:
-
-	- 
