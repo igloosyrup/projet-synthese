@@ -29,7 +29,7 @@ const AdminSignIn = () => {
     return (
         <div>
             <Navbar />
-            <div className="container mt-5 col-sm-4">
+            <div className="container my-5 col-sm-4">
                 <h2 className="mb-5 text-center">Se connecter</h2>
                 <div className="mb-3">
                 <Link className="m-y text-primary" to="#" onClick={() => toSignIn()}>

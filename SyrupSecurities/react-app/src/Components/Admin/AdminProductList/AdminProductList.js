@@ -37,7 +37,7 @@ const ProductList = () => {
         if (window.confirm("Voulez-vous supprimer ce produit")) {
             deleteRequest(productID)
                 .then((res) => res === true ? deleteSuccess() : window.confirm("Suppression échouée"))
-        }else{
+        } else {
             return;
         }
     }
@@ -50,7 +50,7 @@ const ProductList = () => {
 
     const toModify = (e, productId) => {
         e.preventDefault()
-        history.push("/product-modify/"+productId)
+        history.push("/product-modify/" + productId)
     }
 
     const toAdmin = () => {
@@ -62,7 +62,7 @@ const ProductList = () => {
             <Navbar />
             <div className="container-fluid mt-5 col-sm-12 col-md-9">
                 <Link className="btn btn-primary" to="#" onClick={toAdmin}>Retour</Link>
-                <h1 className="text-center">Liste des clients</h1>
+                <h1 className="text-center">Liste des produits</h1>
                 <div className="table-responsive">
                     <table className="table mt-5 text-center">
                         <thead>
@@ -82,8 +82,9 @@ const ProductList = () => {
                                     .map((product) =>
                                     (
                                         <tr key={product.id}>
-                                            <th scope="row">{(product.images === undefined || product.images === null || product.images === "") ?
-                                                <img src={noImage} alt="not found" className="img-thumbnail" width={150} height={150} /> : product.images[0]}</th>
+                                            <th scope="row">
+                                                <img src={(product.imageUrl === undefined || product.imageUrl === null || product.imageUrl === "") ? noImage : product.imageUrl} alt="not found" className="img-thumbnail" width={150} height={150} /> 
+                                                </th>
                                             <th scope="row">{product.name}</th>
                                             <th scope="row">{product.description}</th>
                                             <th scope="row">{product.price}$</th>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const ProductModify = () => {
     let { id } = useParams()
     const history = useHistory()
-    const [product, setProduct] = useState({ id: "", name: "", description: "", price: "", quantity: "", images: [] })
+    const [product, setProduct] = useState({ id: "", name: "", description: "", price: "", quantity: "", imageUrl: "" })
 
     useEffect(() => {
         const getProduct = async () => {
@@ -81,11 +81,8 @@ const ProductModify = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="ImageProduct">Image(s) du produit</label>
-                        <div className="row mx-auto">
-                            <button className="btn btn-dark" onClick={(e) => e.preventDefault()}>Ajouter une image</button>
-                            <input type="text" className="form-control ml-4 col-sm-4" id="ImageProduct" name="images" placeholder="Ajouter une image au produit" onChange={validateInput} />
-                        </div>
+                        <label htmlFor="ImageProduct">Image du produit</label>
+                        <input type="text" className="form-control col-sm-4" id="ImageProduct" name="imageUrl" placeholder="Ajouter une imageUrl au produit" onChange={validateInput} />
                     </div>
 
                     <div className="row ml-auto">

@@ -33,8 +33,8 @@ const Signin = () => {
 
     return (
         <div>
-            <Navbar />
-            <div className="container mt-5 col-sm-4">
+            <Navbar/>
+            <div className="container my-5 col-sm-4">
                 <h2 className="mb-5 text-center">Se connecter</h2>
 
                 <div className="mb-3">
@@ -58,10 +58,8 @@ const Signin = () => {
                         <Link className="m-auto text-primary" to="#" onClick={() => toSignUp()}>
                             Pas de compte? Inscrivez-vous
                         </Link>
-
                     </div>
                 </form>
-
             </div>
         </div>
     )
