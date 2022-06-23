@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Home from './Components/Homepage/Home';
 import Error404 from './Components/Error404/Error404';
@@ -17,12 +18,18 @@ import ProductAdd from './Components/Product/ProductAdd/ProductAdd';
 import ProductModify from './Components/Admin/ProductModify/ProductModify';
 import AdminProductList from './Components/Admin/AdminProductList/AdminProductList';
 import CustomerProfile from './Components/Customer/CustomerProfile/CustomerProfile';
+import ModifyProfile from './Components/Customer/ModifyProfile/ModifyProfile';
+import Cart from './Components/Cart/Cart';
+import Footer from './Components/Footer';
+import ContactUs from './Components/ContactUs/ContactUs';
+import AboutUs from './Components/AboutUs/AboutUs';
+import Antivirus from './Components/Antivirus/Antivirus';
+import Vpn from './Components/Vpn/Vpn';
 
 
 function App() {
 
   // TODO Cache the user credentials
-
   return (
     <Router>
       <Switch>
@@ -38,17 +45,12 @@ function App() {
         )} />
         <Route path="/antivirus" exact render={() => (
           <>
-            <Error404 />
+            <Antivirus />
           </>
         )} />
         <Route path="/vpn" exact render={() => (
           <>
-            <Error404 />
-          </>
-        )} />
-        <Route path="/products" exact render={() => (
-          <>
-            <Error404 />
+            <Vpn />
           </>
         )} />
         <Route path="/signin" exact render={() => (
@@ -86,6 +88,16 @@ function App() {
             <CustomerProfile />
           </>
         )} />
+        <Route path="/customer/modify/:id" exact render={() => (
+          <>
+            <ModifyProfile />
+          </>
+        )} />
+        <Route path="/cart/:id" exact render={() => (
+          <>
+            <Cart />
+          </>
+        )} />
         <Route path="/add-product" exact render={() => (
           <>
             <ProductAdd />
@@ -96,9 +108,24 @@ function App() {
             <ProductList />
           </>
         )} />
+        <Route path="/product/:id" exact render={() => (
+          <>
+            <Product />
+          </>
+        )} />
         <Route path="/product-modify/:id" render={() => (
           <>
             <ProductModify />
+          </>
+        )} />
+        <Route path="/contact-us" render={() => (
+          <>
+            <ContactUs />
+          </>
+        )} />
+        <Route path="/about-us" render={() => (
+          <>
+            <AboutUs />
           </>
         )} />
         <Route path="/*" render={() => (
@@ -107,6 +134,7 @@ function App() {
           </>
         )} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
